@@ -14,13 +14,15 @@
             <div class="col-sm-12 col-lg-6 left-side">
                 <h1>Login</h1>
                 <div class="reg-form">
-                    <form action="">
+                    <form action="#" onsubmit="handleLogin(event)">
                         <div class="row m-3">
                             <div class="mb-5 col-12 ">
                                 <input type="text" class="form-control w-75 mx-auto h-100" id="matric" name="matric" placeholder="Matric number">
+                                <div id="matricWarning" class="warning-message text-danger"></div>
                             </div>
                             <div class="mb-3 col-12">
                                 <input type="password" class="form-control w-75 mx-auto" id="password" name="password" placeholder="Password">
+                                <div id="passwordWarning" class="warning-message text-danger  "></div>
                             </div>
                         </div>
                         <div class="row col-12 justify-content-center">

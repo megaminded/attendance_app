@@ -38,6 +38,12 @@ const handleRegistration = (event) =>{
 }
 
 
+const handleLogin = (event) =>{
+    
+}
+
+
+
 const ShowWarning = (key, message) =>{
     const warning = document.querySelector(`#${key}Warning`)
     if(warning){
