@@ -1,0 +1,101 @@
+font-family: Arial, sans-serif;
+color: white;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+.header{
+ background-color: white;
+ width: 100vh;
+ height: 60px;
+ display: flex;
+ margin-bottom: 160px; 
+ width: 100%;  
+}
+.login{
+ text-decoration: none;
+ color: blue;
+ margin-right: -40px;
+ margin-top: 18px;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 16;
+ font-weight: bold;
+ cursor: pointer;
+ display: flex;
+}
+.logo{
+ margin-left: -12px;
+ margin-right: 1100px;
+ margin-top: -11px;
+ width: 50px;
+}
+    
+
+.login-container {
+width: 350px;
+margin: 100px auto;
+padding: 20px;
+background: #162447;
+border-radius: 8px;
+box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+}
+.login-header{
+background-color: #02c39a;
+color: white;
+padding: 8px;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+margin-bottom: 20px;
+}
+.input-group {
+margin-bottom: 15px;
+}
+.remeber-me {
+ display: flex;
+ align-items: center;
+ margin-bottom: 60px;
+}
+
+.remeber-me input[type="checkbox"] {
+    margin-right: 220px;
+}
+
+h2 {
+color: #00f5d4;
+}
+
+input {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: none;
+border-radius: 5px;
+background: #1f4068;
+color: white;
+}
+
+button {
+width: 100%;
+padding: 10px;
+background-color: #00f5d4;
+color: #162447;
+border: none;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+border-radius: 5px;
+}
+
+button:hover {
+background-color: #02c39a;
+}
+
+a {
+color: #00f5d4;
+text-decoration: none;
+}
+footer{
+text-align: center;
+padding: 10px;
+color: #00f5d4;
+margin-top: 20px;
