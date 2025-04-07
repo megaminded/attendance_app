@@ -6,7 +6,7 @@ const validateProfile = (file) =>{
 
 const handleRegistration = (event) =>{
     event.preventDefault()
-    const formObject = {};
+    const regFormObject = {};
     const formData = new FormData(event.target)
     let formValid = true
 
@@ -19,7 +19,7 @@ const handleRegistration = (event) =>{
                         ShowWarning(key, "invalid file type")
                         formValid = false
                     }else{
-                        formObject[key] = value
+                        regFormObject[key] = value
                     }
                 
                 
@@ -28,18 +28,37 @@ const handleRegistration = (event) =>{
                     ShowWarning(key, `${key} field must not be empty`)
                     formValid = false
                 }else{
-                    formObject[key] = value
+                    regFormObject[key] = value
                 }
             }
         }
     )
-    formValid && submitRegistrationForm(formObject)
+    formValid && submitRegistrationForm(regFormObject)
     
 }
 
 
 const handleLogin = (event) =>{
+    event.preventDefault()
+    const loginFormObject = {};
+    const formData = new FormData(event.target)
+    let formValid = true
+
+    clearWarning()
+
     
+    formData.forEach(
+        (value, key) =>{
+            if(value.trim() === ""){
+                formValid = false;
+                ShowWarning(key, `${key} field must not be empty`)
+            }else{
+                loginFormObject[key] = value
+            }
+        }
+    )
+    formValid && console.log(loginFormObject)
+
 }
 
 
