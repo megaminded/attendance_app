@@ -14,54 +14,54 @@
             <div class="col-sm-12 col-lg-6 left-side">
                 <h1>Registration</h1>
                 <div class="reg-form">
-                    <form action="">
+                    <form id="registration" action="#" onsubmit="handleRegistration(event)">
                         <div class="row m-3">
                             <div class="mb-3 col-6">
                                 <label for="firstname" class="form-label">First name*</label>
-                                <input type="text" class="form-control col-lg-6" id="firstname" placeholder="First name">
+                                <input type="text" class="form-control col-lg-6" id="firstname" name="firstname" placeholder="First name">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="lastname" class="form-label">Last name*</label>
-                                <input type="text" class="form-control" id="lastname" placeholder="Last name">
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name">
                             </div>
                         </div>
 
                         <div class="row m-3">
                             <div class="mb-3 col-6">
                                 <label for="department" class="form-label">Department*</label>
-                                <input type="text" class="form-control col-lg-6" id="department" placeholder="Department">
+                                <input type="text" class="form-control col-lg-6" id="department"  name="department" placeholder="Department">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="matric" class="form-label">Matric number*</label>
-                                <input type="text" class="form-control" id="matric" placeholder="Matric number">
+                                <input type="text" class="form-control" id="matric" name="matric" placeholder="Matric number">
                             </div>
                         </div>
 
                         <div class="row m-3">
                             <div class="mb-3 col-6">
-                                <label for="exampleFormControlInput1" class="form-label">Level*</label>
-                                <input type="text" class="form-control" id="level" placeholder="Level">
+                                <label for="level" class="form-label">Level*</label>
+                                <input type="text" class="form-control" id="level" name="level" placeholder="Level">
                             </div>
                             <div class="mb-3 col-6">
-                                <label for="exampleFormControlInput1" class="form-label">Email address*</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="email" class="form-label">Email address*</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                             </div>
                         </div>
 
                         <div class="row m-3">
                             <div class="mb-3 col-6">
                                 <label for="password" class="form-label">Password* </label>
-                                <input type="password" class="form-control col-lg-6" id="password" placeholder="Password">
+                                <input type="password" class="form-control col-lg-6" id="password" name="password" placeholder="Password">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="confirmpass" class="form-label">Confirm password*</label>
-                                <input type="password" class="form-control" id="confirmpass" placeholder="Confirm password">
+                                <input type="password" class="form-control" id="confirmpass" name="confirmpass" placeholder="Confirm password">
                             </div>
                         </div>
                         <div class="row m-3">
                             <div class="input-group mb-3 col-12">
-                                <label class="input-group-text" for="inputGroupFile01">Profile</label>
-                                <input type="file" class="form-control" id="inputGroupFile01">
+                                <label class="input-group-text" for="profile">Profile</label>
+                                <input type="file" class="form-control" id="profile" name="profile">
                               </div>
                         </div>
                         <div class="row col-12 justify-content-center">
@@ -80,7 +80,8 @@
         </div>
     </div>
 
-    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="../bootstrap/js/bootstrap.bundle.js.map"></script>
+    <script src="./assets/js/custom.js"></script>
+    <script src="./assets/js/bootstrap.bundle.js"></script>
+    <script src="./assets/js/bootstrap.bundle.js.map"></script>
 </body>
 </html>
