@@ -9,6 +9,7 @@ const handleRegistration = (event) =>{
     const formObject = {};
     const formData = new FormData(event.target)
 
+    clearWarning();
     formData.forEach(
         (value, key)=>{
             if(value instanceof File){
@@ -29,4 +30,14 @@ const handleRegistration = (event) =>{
     console.log(formObject)
     
 
+}
+
+
+const clearWarning = () =>{
+    const warningContainer = document.querySelectorAll(".warning-message")
+    warningContainer.forEach(
+        (warning)=>{
+            warning.style.display = "none"
+        }
+    )
 }
