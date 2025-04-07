@@ -1,6 +1,14 @@
 const validateProfile = (file) =>{
     const fileType = ["jpg", "jpeg", "png"]
-   return fileType.includes(file && file.name.split(".")[1].toLowerCase())
+    if(file.name){
+        return fileType.includes(file && (file.name.split(".")[1]).toLowerCase())
+    }else{
+        return "empty"
+    }
+}
+
+const validatePasswordMatch = (password, confirmPass) =>{
+    return password === confirmPass;
 }
 
 
@@ -15,13 +23,14 @@ const handleRegistration = (event) =>{
     formData.forEach(
         (value, key)=>{
             if(value instanceof File){
-                if(!validateProfile(value)){
+                if(validateProfile(value) === "empty"){
+                    ShowWarning(key, `${key} field must not be empty`)
+                }else if(!validateProfile(value)){
                         ShowWarning(key, "invalid file type")
                         formValid = false
-                    }else{
+                }else{
                         regFormObject[key] = value
                     }
-                
                 
             }else{
                 if(value.trim() == ""){
@@ -33,7 +42,13 @@ const handleRegistration = (event) =>{
             }
         }
     )
-    formValid && submitRegistrationForm(regFormObject)
+    if(!validatePasswordMatch(regFormObject.password, regFormObject.confirmpass)){
+        formValid = false
+        ShowWarning("password", `password input must match with confirm password`)
+        ShowWarning("confirmpass", `password input must match with confirm password`)
+    }
+    formValid && console.log(regFormObject)
+    formValid && submitRegistrationForm(regFormObject, event)
     
 }
 
@@ -58,6 +73,7 @@ const handleLogin = (event) =>{
         }
     )
     formValid && console.log(loginFormObject)
+    formValid && submitLoinForm(loginFormObject, event)
 
 }
 
@@ -87,7 +103,7 @@ const clearWarning = () =>{
 
 // communicate with backend api
 
-const submitRegistrationForm = async (payload) =>{
+const submitRegistrationForm = async (payload, event) =>{
     try{
         const fetchData = await fetch("backend_url",{
             method:"POST",
@@ -98,6 +114,7 @@ const submitRegistrationForm = async (payload) =>{
         })
         if(fetchData.ok){
             const data = await fetchData.json()
+            event.target.reset()
         }
         else{
             throw new Error("error submitting form")
@@ -105,5 +122,29 @@ const submitRegistrationForm = async (payload) =>{
 
     }catch(error){
         console.log("error due to ", error)
+    }
+}
+
+
+const submitLoinForm = async (payload, event) =>{
+    try{
+        const fetchData = await fetch("backend_url",{
+            method:"POST",
+            headers:{
+                "Content-type": "application/json",
+            },
+            body:JSON.stringify(payload)
+        })
+        if(fetchData.ok){
+            const data = await fetchData.json()
+            event.target.reset()
+        }
+        else{
+            throw new Error("error submitting form")
+        }
+
+    }catch(error){
+        console.log("error due to ", error)
+
     }
 }
