@@ -32,7 +32,7 @@
 .right-side{
     position: relative;
     height: 90vh;
-    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("../images/hero2.png");
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("../images/auth-img.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
