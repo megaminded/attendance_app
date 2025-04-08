@@ -1,0 +1,42 @@
+.auth-section{
+    position: fixed;
+    top: 50px;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+}
+.left-side{
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 2px solid purple;
+    border-radius: 5px;
+
+}
+.left-side h1{
+    font-weight: lighter;
+    color: purple;
+}
+.reg-form{
+    height: fit-content;
+    width: 100%;
+}
+.reg-form form input{
+    background-color: aliceblue;
+    border: 1px solid skyblue;
+    min-height: 30px;
+}
+
+.right-side{
+    position: relative;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("../images/auth-img.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.warning-message{
+    font-size: 10px;
+}
