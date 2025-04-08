@@ -1,0 +1,83 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: radial-gradient(blue, rgb(249, 93, 249));
+}
+
+.holder {
+  max-width: 40rem;
+  background: #191bdf;
+  object-fit: cover;
+}
+
+.img-control {
+  box-shadow: 2px 5px 3px 2px#ff6b7c;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+}
+.img {
+  width: 100%;
+  border-radius: 20px;
+}
+.studentprofile {
+  border: 2px solid royalblue;
+  width: 130px;
+  border-radius: 10px;
+  background: radial-gradient(rgb(82, 82, 249), #ff6b7c);
+}
+.studentprofile:hover {
+  background: radial-gradient(#fc6577, rgba(0, 0, 255, 0.95));
+  border: 1px solid red;
+}
+.ontime {
+  background-color: #d6f8e3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 2px;
+}
+.absent {
+  background-color: #f51a21;
+  opacity: 0.6;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 2px;
+}
+.Upload-photo {
+  border: 1px solid royalblue;
+  width: 130px;
+  background: radial-gradient(blue, #ff6b7c);
+}
+.Upload-photo:hover {
+  border: 1px solid red;
+}
+.sidebar-btn {
+  background: radial-gradient(blue, #ff6b7c);
+  border: 1px solid red;
+}
+
+.uploadparent-bg,
+.child1,
+.child2,
+.accsetins {
+  overflow-y: scroll;
+  overflow: hidden;
+  background-color: #ddd;
+}
+/* responsive */
+@media only screen and (max-width: 991px) {
+  .uploadparent-bg {
+    width: 100%;
+  }
+}
+/* responsive */
+
+footer {
+  margin-top: 350px;
+}
+
+/* .downdiv{
+    width: 80px;
+        height: 80px;
+        border: 2px solid transparent;
+        overflow: hidden;
+        object-fit: cover;
+} */

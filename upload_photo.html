@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Upload Photo</title>
+    </head>
+    <body>
+        
+          <nav class="navbar navbar-expand-sm navbar-light bg-light d-flex justify-content-between fixed-top">
+               <!-- inside sidebar -->
+
+            <a hre=""><img src="/images/mega.jpg" width="60" alt="mega"></a>
+            <button class="navbar-toggler btn btn-primary btn-sm  mt-2 d-block d-lg-none  text-light sidebar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                         Menue
+                      </button>
+                      <!--  -->
+          </nav>
+           
+            
+
+        <div class="container-fluid">
+            <!-- sidebar inside -->
+           <div class="row">
+                      <!-- sidebar inside -->
+             <div class="col-12 mt-5">
+                <div class="row ">
+                    
+                    <div
+                        class="col-2 col-md-2 col-sm-12 text-light mt-5 ">
+                         <!-- inside sidebar -->
+                     
+                      
+                      
+                      <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="/images/mega.jpg" alt=" mega" width="60"></h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="mb-5">
+                               
+                            </div>
+                             <div class="col-12 mx-5 ">
+                           <strong> <a href="index.html" class="text-decoration-none text-dark">Home</a></strong>
+                            <div class="dropdown mt-3">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                                Account settings
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                   
+                                </ul>
+                            </div>
+                             </div>
+                        </div>
+                      </div>
+                         
+                          
+                
+                          <!-- insidebar -->
+
+                        <!-- outside -->
+                        <div class="sidebardoutside mt-5 mb-2 d-none d-lg-block d-flex position-fixed  mx-5">
+                            <div class="outholder ">
+                           <strong><a href="index.html"
+                                class=" sidebartext text-decoration-none text-dark">Home</a></strong> 
+                            <div class="dropdown mt-3">
+                                <button
+                                    class="btn btn-sm accsetins sidebar dropdown-toggle   "
+                                    type="button" data-bs-toggle="dropdown">
+                                    <strong class="fa fa-cog pull-right text-dark "> Account
+                                        Settings </strong>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item"
+                                            href="#">Profile</a></li>
+                                    <hr>
+                                    <li><a class="dropdown-item"
+                                            href="#">Logout</a></li>
+
+                                </ul>
+                            </div>
+                            </div>
+
+                        </div>
+                        <!-- outside -->
+                        
+
+                    </div>
+                    
+                    <div class="col-10 uploadparent-bg mt-5  ">
+
+            
+                    <div class="row">
+                        
+                        <div class=" col-lg-5 col-md-4 col-sm-12  mt-5 mb-5">
+                            <div class="card  mb-3 border-0 child1"
+                                >
+                                <div
+                                    class="card-header text-danger fw-bold">Please
+                                    upload Photo</div>
+                                <div class="card-body text-dark">
+                                    <h5
+                                        class="card-title text-danger fw-bold"></h5>
+                                    <p class="card-text"> upload a photo in the
+                                        fields provided</p>
+                                    <img width="500"
+                                        src=" "
+                                        alt="No ID found">
+                                    <form action=" "
+                                        method="post"
+                                        enctype="multipart/form-data">
+                                        <input type="hidden" name=" " value=""
+                                            autocomplete="off">
+                                        <div class="custom-file col-sm-12">
+                                            <input id="my-input" class=" mb-2"
+                                                type="file"
+                                                name="photo_front">
+                                        </div>
+                                        <button type="submit"
+                                            class="btn btn-sm Upload-photo text-light ">Upload
+                                            photo</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                            <div
+                    
+                                class=" col-lg-4 col-md-4 col-sm-12 mt-5  mb-5">
+
+                                <div class="card  mb-3 border-0 child2 ">
+                                    <div class="card-header">Personal Account Details</div>
+                                    <div class="card-body text-primary">
+                                <div
+                                    class="mt-4">
+                                    <div class>
+                                        <div
+                                            class="upper text-dark opacity-50">Account
+                                            holder</div>
+                                        <div class="text-dark  ">
+                                            First name
+                                            Last name
+                                        </div>
+                                    </div>
+                                    <div class>
+                                        <div
+                                            class="text-dark opacity-50">Department</div>
+                                        <div
+                                            class="text-dark ">default</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class=" mt-2">
+                                    <div>
+                                        <div
+                                            class="text-dark opacity-50">Matric
+                                            Number</div>
+                                        <div
+                                            class="cap text-dark">default</div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class=" text-dark opacity-50">Level</div>
+                                        <div class="cap text-dark">
+                                            default
+                                        </div>
+                                        <div
+                                            class=" text-dark opacity-50">Email</div>
+                                        <div class="cap text-dark">
+                                            default
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                    
+            </div>
+            
+
+            
+             <footer class="main-footer ">
+                        <div class="pull-left d-none d-sm-inline-block">
+                            <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Contact US: Email:contact mega @gmail.com
+                                        Phone: </a>
+                                </li>
+                            </ul>
+                        </div>
+                        &copy; mega mindset  2025. All Rights Reserved.
+                    </footer>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+               
+        </div>
+    
+
+            <script src="js/bootstrap.bundle.js"></script>
+        </body>
+    </html>
