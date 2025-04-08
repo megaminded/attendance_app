@@ -4,16 +4,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+         <style>
+        @media only screen and (max-width: 900px) {
+            .uploadparent-bg {
+    
+             width: 100%;
+  }
+}
+
+</style>
         <title>Upload Photo</title>
     </head>
     <body>
         
-          <nav class="navbar navbar-expand-sm navbar-light bg-light d-flex justify-content-between fixed-top">
+          <nav class="navbar navbar-expand-sm navbar-light bg-light  d-flex justify-content-between fixed-top">
                <!-- inside sidebar -->
 
-            <a hre=""><img src="/images/mega.jpg" width="60" alt="mega"></a>
+            <a hre=""><img src="assets/images/mega.jpg" width="60" alt="mega"></a>
             <button class="navbar-toggler btn btn-primary btn-sm  mt-2 d-block d-lg-none  text-light sidebar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                          Menue
                       </button>
@@ -37,7 +46,7 @@
                       
                       <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="/images/mega.jpg" alt=" mega" width="60"></h5>
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="assets/images/mega.jpg" alt=" mega" width="60"></h5>
                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
@@ -45,10 +54,10 @@
                                
                             </div>
                              <div class="col-12 mx-5 ">
-                           <strong> <a href="index.html" class="text-decoration-none text-dark">Home</a></strong>
+                           <strong> <a href="profilepage.html" class="text-decoration-none text-dark">Home</a></strong>
                             <div class="dropdown mt-3">
-                                <button class="btn btn-small dropdown-toggle  accsetins" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-                                Account settings
+                                <button class="btn btn-small dropdown-toggle  bg-light " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                               <b> Account settings</b>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -65,15 +74,15 @@
                           <!-- insidebar -->
 
                         <!-- outside -->
-                        <div class="sidebardoutside mt-5 mb-2 d-none d-lg-block d-flex position-fixed  mx-5">
+                        <div class="sidebardoutside mt-5 mb-2 d-none d-lg-block d-flex position-fixed  mx-3 ">
                             <div class="outholder ">
-                           <strong><a href="index.html"
-                                class=" sidebartext text-decoration-none text-dark">Home</a></strong> 
+                           <strong><a href="profilepage.html"
+                                class=" sidebartext text-decoration-none text-dark fw-bold">Home</a></strong> 
                             <div class="dropdown mt-3">
                                 <button
-                                    class="btn btn-sm accsetins sidebar dropdown-toggle   "
+                                    class="btn btn-sm bg-light sidebar dropdown-toggle   "
                                     type="button" data-bs-toggle="dropdown">
-                                    <strong class="fa fa-cog pull-right text-dark "> Account
+                                    <strong class="fa fa-cog pull-right text-dark  "> Account
                                         Settings </strong>
                                 </button>
                                 <ul class="dropdown-menu">
@@ -123,7 +132,7 @@
                                                 name="photo_front">
                                         </div>
                                         <button type="submit"
-                                            class="btn btn-sm Upload-photo text-light ">Upload
+                                            class="btn btn-sm Upload-photo text-light studentprofile ">Upload
                                             photo</button>
                                     </form>
                                 </div>
@@ -207,6 +216,6 @@
         </div>
     
 
-            <script src="js/bootstrap.bundle.js"></script>
+            <script src="assets/js/bootstrap.bundle.js"></script>
         </body>
     </html>
