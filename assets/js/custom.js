@@ -1,3 +1,5 @@
+const baseUrl = "backend_url";
+
 const validateProfile = (file, supported) =>{
     if(file.name){
         return supported.includes(file && (file.name.split(".")[1]).toLowerCase())
@@ -23,66 +25,53 @@ const handleRegistration = (event) =>{
     event.preventDefault()
     const regFormObject = {};
     const formData = new FormData(event.target)
-    let formValid = true
     const fileType = ["jpg", "jpeg", "png"]
 
-    clearWarning();
+    const firstname = formData.get("firstname")
+    const lastname = formData.get("lastname")
+    const email = formData.get("email")
+    const department = formData.get("department")
+    const level = formData.get("level")
+    const matric = formData.get("matric")
+    const password = formData.get("password")
+    const confirmPass = formData.get("confirmPass")
+    const profile = formData.get("profile")
 
-    formData.forEach(
-        (value, key)=>{
-            if(value instanceof File){
-                if(validateProfile(value, fileType) === "empty"){
-                    ShowWarning(key, `${key} field must not be empty`)
-                }else if(!validateProfile(value)){
-                        ShowWarning(key, "invalid file type")
-                        formValid = false
-                }else{
-                        regFormObject[key] = value
-                    }
-                
-            }else{
-                if(value.trim() == ""){
-                    ShowWarning(key, `${key} field must not be empty`)
-                    formValid = false
-                }else{
-                    regFormObject[key] = value
-                }
-            }
-        }
-    )
-    if(!validatePasswordMatch(regFormObject.password, regFormObject.confirmpass)){
-        formValid = false
-        ShowWarning("password", `password input must match with confirm password`)
-        ShowWarning("confirmpass", `password input must match with confirm password`)
+
+    console.log(profile.name)
+
+    if(firstname.trim() === "" || lastname.trim() === "" || email.trim() === "" || department.trim() === ""|| level.trim() === "" || matric.trim() === ""|| password.trim() === "" || confirmPass.trim() === ""){
+        console.log("ensure the filed is filled")
+    }else if(password !== confirmPass){
+        console.log("password and comfrim password must match")
+    }else if(profile.name === ""){
+        console.log("ensure you choose your profile picture")
+    }else if(!validateProfile(profile, fileType)){
+        console.log("file type not supported")
     }
-    formValid && console.log(regFormObject)
-    formValid && submitRegistrationForm(regFormObject, event)
+    else{
+        const data = {
+            firstname : firstname,
+            lastname: lastname,
+            email:email,
+            department: department,
+            level: level,
+            matric: matric,
+            password: password,
+            profile: profile
+        }
+        console.log(data)
+        // submitRegistrationForm(data, event)
+    }
+
     
 }
 
 
 const handleLogin = (event) =>{
     event.preventDefault()
-    const loginFormObject = {};
     const formData = new FormData(event.target)
-    let formValid = true
-
     clearWarning()
-
-    
-    formData.forEach(
-        (value, key) =>{
-            if(value.trim() === ""){
-                formValid = false;
-                ShowWarning(key, `${key} field must not be empty`)
-            }else{
-                loginFormObject[key] = value
-            }
-        }
-    )
-    formValid && console.log(loginFormObject)
-    formValid && submitLoinForm(loginFormObject, event)
-
 }
 
 
@@ -100,7 +89,7 @@ const clearWarning = () =>{
     const warningContainer = document.querySelectorAll(".warning-message")
     warningContainer.forEach(
         (warning)=>{
-            warning.style.display = "none";
+            warning.classList.add("d-none");
         }
     )
 }
@@ -113,7 +102,7 @@ const clearWarning = () =>{
 
 const submitRegistrationForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch("backend_url",post)
+        const fetchData = await fetch(`${baseUrl}/registration`,post)
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
@@ -131,7 +120,7 @@ const submitRegistrationForm = async (payload, event) =>{
 
 const submitLoinForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch("backend_url",)
+        const fetchData = await fetch(`${baseUrl}/login`,)
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
