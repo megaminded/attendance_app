@@ -21,12 +21,22 @@ const post = (payload) =>{
 }
 
 
+const warningLabel = (message) =>{
+    const warningContainer = document.querySelector(".alert-warning")
+    if(message){
+        warningContainer.classList.remove("d-none")
+        warningContainer.classList.add("d-block")
+        warningContainer.textContent = message
+    }
+
+}
+
 const handleRegistration = (event) =>{
     event.preventDefault()
-    const regFormObject = {};
     const formData = new FormData(event.target)
     const fileType = ["jpg", "jpeg", "png"]
 
+    clearWarning()
     const firstname = formData.get("firstname")
     const lastname = formData.get("lastname")
     const email = formData.get("email")
@@ -38,16 +48,16 @@ const handleRegistration = (event) =>{
     const profile = formData.get("profile")
 
 
-    console.log(profile.name)
+    
 
     if(firstname.trim() === "" || lastname.trim() === "" || email.trim() === "" || department.trim() === ""|| level.trim() === "" || matric.trim() === ""|| password.trim() === "" || confirmPass.trim() === ""){
-        console.log("ensure the filed is filled")
+        warningLabel("ensure all the fields are filled")
     }else if(password !== confirmPass){
-        console.log("password and comfrim password must match")
+        warningLabel("password and comfrim password must match")
     }else if(profile.name === ""){
-        console.log("ensure you choose your profile picture")
+        warningLabel("ensure you choose your profile picture")
     }else if(!validateProfile(profile, fileType)){
-        console.log("file type not supported")
+        warningLabel("file type not supported")
     }
     else{
         const data = {
@@ -77,7 +87,7 @@ const handleLogin = (event) =>{
     const password = formData.get("password")
 
     if(matric.trim() === ""|| password.trim() ===""){
-        console.log("ensure the filed is filled")
+        warningLabel("ensure the filed is filled")
     }else{
         const data = {
             matric:matric,
@@ -90,22 +100,11 @@ const handleLogin = (event) =>{
 
 
 
-const ShowWarning = (key, message) =>{
-    const warning = document.querySelector(`#${key}Warning`)
-    if(warning){
-        warning.innerHTML = message;
-        warning.style.display = "block";
-    }
-}
+
 
 
 const clearWarning = () =>{
-    const warningContainer = document.querySelectorAll(".warning-message")
-    warningContainer.forEach(
-        (warning)=>{
-            warning.classList.add("d-none");
-        }
-    )
+    document.querySelector(".alert-warning").classList.add("d-none")
 }
 
 
