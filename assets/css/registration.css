@@ -1,32 +1,35 @@
 .auth-section{
-    position: fixed;
-    top: 50px;
-    bottom: 20px;
-    left: 0px;
-    right: 0px;
+   margin: 100px auto;
 }
 .left-side{
     display: flex;
-    height: 90vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left: 2px solid purple;
+    border-left: 2px solid var(--color-primary-light);
     border-radius: 5px;
 
 }
 .left-side h1{
     font-weight: lighter;
-    color: purple;
+    color: var(--color-primary);
+    align-self: center;
+    justify-self: center;
 }
 .reg-form{
     height: fit-content;
+    min-height: 80vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .reg-form form input{
     background-color: aliceblue;
     border: 1px solid skyblue;
     min-height: 30px;
+    min-width: 250px;
 }
 
 .right-side{
