@@ -61,7 +61,7 @@ const handleRegistration = (event) =>{
             profile: profile
         }
         console.log(data)
-        // submitRegistrationForm(data, event)
+        submitRegistrationForm(data, event)
     }
 
     
@@ -72,6 +72,20 @@ const handleLogin = (event) =>{
     event.preventDefault()
     const formData = new FormData(event.target)
     clearWarning()
+
+    const matric = formData.get("matric")
+    const password = formData.get("password")
+
+    if(matric.trim() === ""|| password.trim() ===""){
+        console.log("ensure the filed is filled")
+    }else{
+        const data = {
+            matric:matric,
+            password:password
+        }
+        console.log(data)
+        // submitLoinForm(data, event)
+    }
 }
 
 
@@ -102,7 +116,7 @@ const clearWarning = () =>{
 
 const submitRegistrationForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch(`${baseUrl}/registration`,post)
+        const fetchData = await fetch(`${baseUrl}/registration`,post(payload))
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
@@ -120,7 +134,7 @@ const submitRegistrationForm = async (payload, event) =>{
 
 const submitLoinForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch(`${baseUrl}/login`,)
+        const fetchData = await fetch(`${baseUrl}/login`, post(payload))
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
