@@ -1,14 +1,21 @@
-const validateProfile = (file) =>{
-    const fileType = ["jpg", "jpeg", "png"]
+const validateProfile = (file, supported) =>{
     if(file.name){
-        return fileType.includes(file && (file.name.split(".")[1]).toLowerCase())
+        return supported.includes(file && (file.name.split(".")[1]).toLowerCase())
     }else{
         return "empty"
     }
 }
 
-const validatePasswordMatch = (password, confirmPass) =>{
-    return password === confirmPass;
+
+
+const post = (payload) =>{
+    return {
+            method:"POST",
+            headers:{
+                "Content-type": "application/json",
+            },
+            body:JSON.stringify(payload)
+    }
 }
 
 
@@ -17,13 +24,14 @@ const handleRegistration = (event) =>{
     const regFormObject = {};
     const formData = new FormData(event.target)
     let formValid = true
+    const fileType = ["jpg", "jpeg", "png"]
 
     clearWarning();
 
     formData.forEach(
         (value, key)=>{
             if(value instanceof File){
-                if(validateProfile(value) === "empty"){
+                if(validateProfile(value, fileType) === "empty"){
                     ShowWarning(key, `${key} field must not be empty`)
                 }else if(!validateProfile(value)){
                         ShowWarning(key, "invalid file type")
@@ -105,16 +113,11 @@ const clearWarning = () =>{
 
 const submitRegistrationForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch("backend_url",{
-            method:"POST",
-            headers:{
-                "Content-type": "application/json",
-            },
-            body:JSON.stringify(payload)
-        })
+        const fetchData = await fetch("backend_url",post)
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
+            // navigate to login page
         }
         else{
             throw new Error("error submitting form")
@@ -128,16 +131,11 @@ const submitRegistrationForm = async (payload, event) =>{
 
 const submitLoinForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch("backend_url",{
-            method:"POST",
-            headers:{
-                "Content-type": "application/json",
-            },
-            body:JSON.stringify(payload)
-        })
+        const fetchData = await fetch("backend_url",)
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
+            //naivgate to dashboard
         }
         else{
             throw new Error("error submitting form")
