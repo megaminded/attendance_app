@@ -26,7 +26,7 @@ async def get_student(db: DbManager):
 async def register_students(
         db: DbManager,
         student_details: str = Form(...),
-        file: UploadFile = File(...)
+        profile: UploadFile = File(...)
     ):
     try:
         student = RegisterStudent(**json.loads(student_details))
@@ -37,7 +37,7 @@ async def register_students(
                 status_code=403
             )
 
-        unique_filename = get_unique_file_name(file.filename)
+        unique_filename = get_unique_file_name(profile.filename)
         file_location = save_profile(unique_filename)
         db.add(
             Students(
@@ -55,7 +55,7 @@ async def register_students(
         db.flush()
 
         with open(file_location, "wb") as f:
-            f.write(await file.read())
+            f.write(await profile.read())
 
         return JSONResponse(
             content="user registered successfully",
