@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* nav */
+  /* nav {
+    background-color: var(--color-primary);
+  } */
+body {
+    background-color: #d93896;
+    padding: 2rem;
+}
+
+.student-card {
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: inherit;
+}
+.photo{
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+}
+
+
