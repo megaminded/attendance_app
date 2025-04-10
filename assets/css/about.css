@@ -66,51 +66,7 @@ a {
     }
 }
 
-/* loader */
-.loader{
-  position: absolute;
-  position: fixed;
-  z-index: 9999981;
-  height: 100vh;
-  width: 100%;
-  top:1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  animation: dissapear 2s;
- 
 
-}
-
-@keyframes dissapear {
-  from{
-    visibility: visible;
-  }
-  to{
-    visibility: visible;
-  }
-  
-}
-.spinner{
-   font-size: 40px;
-  color: blueviolet;
-  animation: rotate 2s linear infinite;
-
-}
-
-@keyframes rotate {
-  from{
-    transform: rotate(0deg);
-  }
-   to{
-    transform: rotate(360deg);
-  }
-  
-}
-
-
-/* loader */
 
 
 
