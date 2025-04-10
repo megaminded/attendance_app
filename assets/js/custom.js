@@ -1,100 +1,110 @@
-const validateProfile = (file) =>{
-    const fileType = ["jpg", "jpeg", "png"]
+const baseUrl = "backend_url";
+
+const validateProfile = (file, supported) =>{
     if(file.name){
-        return fileType.includes(file && (file.name.split(".")[1]).toLowerCase())
+        return supported.includes(file && (file.name.split(".")[1]).toLowerCase())
     }else{
         return "empty"
     }
 }
 
-const validatePasswordMatch = (password, confirmPass) =>{
-    return password === confirmPass;
+
+
+const post = (payload) =>{
+    return {
+            method:"POST",
+            headers:{
+                "Content-type": "application/json",
+            },
+            body:JSON.stringify(payload)
+    }
 }
 
 
+const warningLabel = (message) =>{
+    const warningContainer = document.querySelector(".alert-warning")
+    if(message){
+        warningContainer.classList.remove("d-none")
+        warningContainer.classList.add("d-block")
+        warningContainer.textContent = message
+    }
+
+}
+
 const handleRegistration = (event) =>{
     event.preventDefault()
-    const regFormObject = {};
     const formData = new FormData(event.target)
-    let formValid = true
+    const fileType = ["jpg", "jpeg", "png"]
 
-    clearWarning();
+    clearWarning()
+    const firstname = formData.get("firstname")
+    const lastname = formData.get("lastname")
+    const email = formData.get("email")
+    const department = formData.get("department")
+    const level = formData.get("level")
+    const matric = formData.get("matric")
+    const password = formData.get("password")
+    const confirmPass = formData.get("confirmPass")
+    const profile = formData.get("profile")
 
-    formData.forEach(
-        (value, key)=>{
-            if(value instanceof File){
-                if(validateProfile(value) === "empty"){
-                    ShowWarning(key, `${key} field must not be empty`)
-                }else if(!validateProfile(value)){
-                        ShowWarning(key, "invalid file type")
-                        formValid = false
-                }else{
-                        regFormObject[key] = value
-                    }
-                
-            }else{
-                if(value.trim() == ""){
-                    ShowWarning(key, `${key} field must not be empty`)
-                    formValid = false
-                }else{
-                    regFormObject[key] = value
-                }
-            }
-        }
-    )
-    if(!validatePasswordMatch(regFormObject.password, regFormObject.confirmpass)){
-        formValid = false
-        ShowWarning("password", `password input must match with confirm password`)
-        ShowWarning("confirmpass", `password input must match with confirm password`)
+
+    
+
+    if(firstname.trim() === "" || lastname.trim() === "" || email.trim() === "" || department.trim() === ""|| level.trim() === "" || matric.trim() === ""|| password.trim() === "" || confirmPass.trim() === ""){
+        warningLabel("ensure all the fields are filled")
+    }else if(password !== confirmPass){
+        warningLabel("password and comfrim password must match")
+    }else if(profile.name === ""){
+        warningLabel("ensure you choose your profile picture")
+    }else if(!validateProfile(profile, fileType)){
+        warningLabel("file type not supported")
     }
-    formValid && console.log(regFormObject)
-    formValid && submitRegistrationForm(regFormObject, event)
+    else{
+        const data = {
+            firstname : firstname,
+            lastname: lastname,
+            email:email,
+            department: department,
+            level: level,
+            matric: matric,
+            password: password,
+            profile: profile
+        }
+        console.log(data)
+        submitRegistrationForm(data, event)
+    }
+
     
 }
 
 
 const handleLogin = (event) =>{
     event.preventDefault()
-    const loginFormObject = {};
     const formData = new FormData(event.target)
-    let formValid = true
-
     clearWarning()
 
-    
-    formData.forEach(
-        (value, key) =>{
-            if(value.trim() === ""){
-                formValid = false;
-                ShowWarning(key, `${key} field must not be empty`)
-            }else{
-                loginFormObject[key] = value
-            }
+    const matric = formData.get("matric")
+    const password = formData.get("password")
+
+    if(matric.trim() === ""|| password.trim() ===""){
+        warningLabel("ensure the filed is filled")
+    }else{
+        const data = {
+            matric:matric,
+            password:password
         }
-    )
-    formValid && console.log(loginFormObject)
-    formValid && submitLoinForm(loginFormObject, event)
-
-}
-
-
-
-const ShowWarning = (key, message) =>{
-    const warning = document.querySelector(`#${key}Warning`)
-    if(warning){
-        warning.innerHTML = message;
-        warning.style.display = "block";
+        console.log(data)
+        // submitLoinForm(data, event)
     }
 }
 
 
+
+
+
+
 const clearWarning = () =>{
-    const warningContainer = document.querySelectorAll(".warning-message")
-    warningContainer.forEach(
-        (warning)=>{
-            warning.style.display = "none";
-        }
-    )
+    document.querySelector(".alert-warning").classList.add("d-none")
 }
 
 
@@ -105,16 +115,11 @@ const clearWarning = () =>{
 
 const submitRegistrationForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch("backend_url",{
-            method:"POST",
-            headers:{
-                "Content-type": "application/json",
-            },
-            body:JSON.stringify(payload)
-        })
+        const fetchData = await fetch(`${baseUrl}/registration`,post(payload))
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
+            // navigate to login page
         }
         else{
             throw new Error("error submitting form")
@@ -128,16 +133,11 @@ const submitRegistrationForm = async (payload, event) =>{
 
 const submitLoinForm = async (payload, event) =>{
     try{
-        const fetchData = await fetch("backend_url",{
-            method:"POST",
-            headers:{
-                "Content-type": "application/json",
-            },
-            body:JSON.stringify(payload)
-        })
+        const fetchData = await fetch(`${baseUrl}/login`, post(payload))
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
+            //naivgate to dashboard
         }
         else{
             throw new Error("error submitting form")
