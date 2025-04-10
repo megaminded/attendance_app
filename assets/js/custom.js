@@ -1,4 +1,4 @@
-const baseUrl = "backend_url";
+const baseUrl = "http://127.0.0.1:9000";
 
 const validateProfile = (file, supported) =>{
     if(file.name){
@@ -13,20 +13,29 @@ const validateProfile = (file, supported) =>{
 const post = (payload) =>{
     return {
             method:"POST",
-            headers:{
-                "Content-type": "application/json",
-            },
+            // headers:{
+            //     "Content-type": "application/json",
+            // },
             body:JSON.stringify(payload)
     }
 }
 
 
-const warningLabel = (message) =>{
-    const warningContainer = document.querySelector(".alert-warning")
+const notifyUser = (message, type) =>{
+    const warningContainer = document.querySelector(".alert")
     if(message){
-        warningContainer.classList.remove("d-none")
-        warningContainer.classList.add("d-block")
-        warningContainer.textContent = message
+        if(type === "warning"){
+            warningContainer.classList.remove("d-none")
+            warningContainer.classList.add("alert-warning")
+            warningContainer.classList.add("d-block")
+            warningContainer.textContent = message
+        }else if(type === "success"){
+            warningContainer.classList.remove("d-none")
+            warningContainer.classList.add("alert-success")
+            warningContainer.classList.add("d-block")
+            warningContainer.textContent = message
+        }
+
     }
 
 }
@@ -51,13 +60,13 @@ const handleRegistration = (event) =>{
     
 
     if(firstname.trim() === "" || lastname.trim() === "" || email.trim() === "" || department.trim() === ""|| level.trim() === "" || matric.trim() === ""|| password.trim() === "" || confirmPass.trim() === ""){
-        warningLabel("ensure all the fields are filled")
+        notifyUser("ensure all the fields are filled", "warning")
     }else if(password !== confirmPass){
-        warningLabel("password and comfrim password must match")
+        notifyUser("password and comfrim password must match", "warning")
     }else if(profile.name === ""){
-        warningLabel("ensure you choose your profile picture")
+        notifyUser("ensure you choose your profile picture", "warning")
     }else if(!validateProfile(profile, fileType)){
-        warningLabel("file type not supported")
+        notifyUser("file type not supported", "warning")
     }
     else{
         const data = {
@@ -68,10 +77,10 @@ const handleRegistration = (event) =>{
             level: level,
             matric: matric,
             password: password,
-            profile: profile
         }
-        console.log(data)
-        submitRegistrationForm(data, event)
+        formData.append("student_details", JSON.stringify(data))
+        formData.append("profile", profile)
+        submitRegistrationForm(formData, event)
     }
 
     
@@ -87,7 +96,7 @@ const handleLogin = (event) =>{
     const password = formData.get("password")
 
     if(matric.trim() === ""|| password.trim() ===""){
-        warningLabel("ensure the filed is filled")
+        notifyUser("ensure the filed is filled", "warning")
     }else{
         const data = {
             matric:matric,
@@ -104,7 +113,7 @@ const handleLogin = (event) =>{
 
 
 const clearWarning = () =>{
-    document.querySelector(".alert-warning").classList.add("d-none")
+    document.querySelector(".alert").classList.add("d-none")
 }
 
 
@@ -119,7 +128,8 @@ const submitRegistrationForm = async (payload, event) =>{
         if(fetchData.ok){
             const data = await fetchData.json()
             event.target.reset()
-            // navigate to login page
+            notifyUser("student registered successfully", "success")
+              // navigate to login page
         }
         else{
             throw new Error("error submitting form")
