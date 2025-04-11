@@ -11,48 +11,45 @@
 .primary-bg-color {
   background-color: var(--color-primary);
 }
+.primary-color-light {
+  color: var(--color-tertiary);
+}
 /* loader */
-.loader{
+.loader {
   position: absolute;
   position: fixed;
   z-index: 9999981;
   height: 100vh;
   width: 100%;
-  top:1px;
+  top: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
   visibility: hidden;
   animation: dissapear 2s;
- 
-
 }
 
 @keyframes dissapear {
-  from{
+  from {
     visibility: visible;
   }
-  to{
+  to {
     visibility: visible;
   }
-  
 }
-.spinner{
-   font-size: 40px;
+.spinner {
+  font-size: 40px;
   color: purple;
   animation: rotate 2s linear infinite;
-
 }
 
 @keyframes rotate {
-  from{
+  from {
     transform: rotate(0deg);
   }
-   to{
+  to {
     transform: rotate(360deg);
   }
-  
 }
-
 
 /* loader */
