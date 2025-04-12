@@ -20,7 +20,7 @@ class Crud extends DbConnection{
         }
     }
 
-    public function createTable()
+    public function createTable()   //Creates table
     {
         $statement = 'CREATE TABLE users(
                 user_id VARCHAR(255) PRIMARY KEY,
