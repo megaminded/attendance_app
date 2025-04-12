@@ -48,7 +48,7 @@ class UserModel extends DbConnection{
         ";
         
 
-        if($this->conn->query($statement)){
+        if($this->conn->query($statement) === TRUE){
             return true;
         } else{
             throw new Exception("error while uploaing signup details");
