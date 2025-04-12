@@ -1,6 +1,11 @@
-## Create a dbConfig file
+## Create a dbConfig.php file
 
-copy and paste whats on the dbConfig.php file and use on your own dbConfig file
+- create a dbConfig class that contains the following
+    $hostname = ''
+    $username = ''
+    $password = ''
+    $database = ''
+
 
 ## Create a database and a user table
 
