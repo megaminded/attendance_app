@@ -42,7 +42,7 @@ const notifyUser = (message, type) =>{
     setTimeout(
         ()=>{
             clearWarning()
-        }, 1000
+        }, 3000
     )
 
 }
