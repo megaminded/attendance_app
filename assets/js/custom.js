@@ -1,4 +1,4 @@
-const baseUrl = "http://127.0.0.1:8000";
+const baseUrl = "http://127.0.0.1:9000";
 
 const validateProfile = (file, supported) =>{
     if(file.name){
@@ -109,7 +109,7 @@ const handleLogin = (event) =>{
             matric:matric,
             password:password
         }
-        formData.append("student_details", JSON.stringify(data))
+        formData.append("info", JSON.stringify(data))
         submitLoinForm(formData, event)
     }
 }
