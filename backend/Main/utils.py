@@ -4,7 +4,7 @@ from passlib.context import CryptContext
 from starlette.exceptions import HTTPException
 from starlette.responses import JSONResponse
 
-from Main.database_setup import Students
+from Main.database_setup import Students, Admin
 
 pwd_context = CryptContext(schemes="bcrypt", deprecated='auto')
 
@@ -27,13 +27,24 @@ def generate_hash_password(password):
 def verify_hash_password(hash_pass, password):
     return pwd_context.verify(password, hash=hash_pass)
 
-def authenticate_student(db, matric: str, password: str):
+def authenticate_user(db, matric: str, password: str):
     check_student = db.query(Students).filter(Students.matric == matric).first()
+    check_admin = db.query(Admin).filter(Admin.email == matric).first()
     if check_student:
         if verify_hash_password(hash_pass=check_student.password, password=password):
             return JSONResponse(
                 status_code=200,
-                content="user authenticated"
+                content="stundent authenticated"
+            )
+        raise HTTPException(
+            detail="invalid password",
+            status_code=401
+        )
+    elif check_admin:
+        if verify_hash_password(hash_pass=check_admin.password, password=password):
+            return JSONResponse(
+                status_code=200,
+                content="admin authenticated"
             )
         raise HTTPException(
             detail="invalid password",

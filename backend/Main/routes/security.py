@@ -1,8 +1,11 @@
 from fastapi import APIRouter, Form, File, UploadFile
 from starlette.responses import JSONResponse
-from Main.utils import get_unique_file_name, save_profile, generate_hash_password, verify_hash_password, authenticate_student
+from Main.utils import (
+    get_unique_file_name, save_profile, 
+    generate_hash_password, authenticate_user
+)
 from starlette.exceptions import HTTPException
-from Main.database_setup import DbManager, Students, RegisterStudent, LoginStudent
+from Main.database_setup import DbManager, Students, RegisterStudent, LoginUser
 import json
 
 
@@ -70,10 +73,11 @@ async def register_students(
 
 
 @security.post("/login")
-async def login_user(db: DbManager, student_details: str = Form(...)):
+async def login_user(db: DbManager, info: str = Form(...)):
     try:
-        student_login = LoginStudent(**json.loads(student_details))
-        authenticate_student(db, matric=student_login.matric, password=student_login.password)
+        user_info = LoginUser(**json.loads(info))
+        if user_info:
+            authenticate_user(db, matric=user_info.matric, password=user_info.password)
     except json.JSONDecodeError as e:
         raise HTTPException(
             detail=f"invalid json data due to {e}",
