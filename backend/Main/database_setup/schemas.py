@@ -11,6 +11,7 @@ class RegisterStudent(BaseModel):
 
 
 
-class LoginStudent(BaseModel):
+class LoginUser(BaseModel):
     matric: str
     password: str
+    

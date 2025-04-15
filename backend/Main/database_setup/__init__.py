@@ -1,9 +1,9 @@
 from .database import engine, Base, local_session
-from .model import Students
+from .model import Students, Admin
 from fastapi import Depends
 from typing import Annotated
 from sqlalchemy.orm import Session
-from .schemas import RegisterStudent, LoginStudent
+from .schemas import RegisterStudent, LoginUser
 
 Base.metadata.create_all(bind=engine)
 
