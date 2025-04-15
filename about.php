@@ -10,43 +10,12 @@
     <link rel="stylesheet" href="assets/css/font-awasome/css/all.css">
     <!-- css -->
     <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/base.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-sm navbar-light fixed-top primary-bg-color">
-        <div class="container">
-          <a class="navbar-brand text-light" href="index.html"><img src="assets/images/icons/logo.png" alt="logo" width="200px"></a>
-          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active text-light" href="index.html" aria-current="page">
-                  <i class="fa fa-home" aria-hidden="true"></i>HOME
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="about.html">ABOUT US</a>
-              </li>
-    
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link text-light" href="login.html">
-                  <i class="fa fa-user-plus" aria-hidden="true"></i>
-                  LOGIN
-                </a>
-              </li>
-              <li class="nav-item"> <a class="nav-link text-light" href="registration.html">REGISTER</a></li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+    <?php include "./inc/navbar.php" ?>
 
 
     <!-- loaderannimation -->
