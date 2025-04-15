@@ -17,6 +17,9 @@
             <li class="nav-item">
               <a class="nav-link text-light" href="about.php">ABOUT US</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="help.php">HELP</a>
+            </li>
   
           </ul>
           <ul class="navbar-nav">
