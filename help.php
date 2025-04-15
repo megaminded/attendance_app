@@ -10,30 +10,22 @@
 
     <!--css-style -->
     <link rel="stylesheet" href="assets/css/help.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+
+      <!-- Font Awesome -->
+  <link rel="stylesheet" href="assets/css/font-awasome/css/all.css">
+  <!-- css -->
+  <!-- <link rel="stylesheet" href="assets/css/homepage.css"> -->
+  
 
 
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand fw-bold fs-3" href="#">Attendance Help</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active fs-5" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link fs-5" href="#submit">Submit Issue</a></li>
-          <li class="nav-item"><a class="nav-link fs-5" href="#faq">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link fs-5" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+ <!-- Navigation -->
+  <?php include "./inc/navbar.php"?>
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero primary-bg-color mt-5">
     <div class="container">
       <h1>Attendance Help Management System</h1>
       <p>Having issues with your attendance? Submit a request and get help fast!</p>
@@ -43,7 +35,7 @@
   <!-- Submit Ticket Section -->
   <section id="submit" class="py-5">
     <div class="container">
-      <h2 class="section-title text-center">Submit Attendance Issue</h2>
+      <h2 class="section-title text-center primary-color">Submit Attendance Issue</h2>
       <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
           <div class="card p-4">
@@ -77,7 +69,7 @@
                 <textarea class="form-control" rows="4" placeholder="Describe your issue" required></textarea>
               </div>
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Submit Ticket</button>
+                <button type="submit" class="primary-bg-color" id="submit-btn">Submit Ticket</button>
               </div>
             </form>
           </div>
@@ -89,7 +81,7 @@
   <!-- FAQ Section -->
   <section id="faq" class="bg-light py-5">
     <div class="container">
-      <h2 class="section-title text-center">Frequently Asked Questions</h2>
+      <h2 class="section-title text-center primary-color">Frequently Asked Questions</h2>
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -115,21 +107,13 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
-    <div class="container text-center">
-      <h2 class="section-title">Contact Us</h2>
-      <p>If you have additional questions, email us at <a href="mailto:support@attendancehelp.com">support@attendancehelp.com</a></p>
-    </div>
-  </section>
+ 
 
   <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 Attendance Help Management. All Rights Reserved.</p>
-    </div>
-  </footer>
+  <?php include "./inc/footer.php" ?>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+  <!-- Bootstrap JS -->
+  <script src="assets/js/bootstrap.js"></script>
 </body>
 </html>
