@@ -50,7 +50,7 @@
                             <button class="btn primary-bg-color text-white w-25" > Submit</button>
                         </div>
                         <div class="row">
-                            <p class="col-12">Don't have an account? <a href="./registration.html">Register here</a></p>
+                            <p class="col-12">Don't have an account? <a href="./registration.php">Register here</a></p>
                         </div>
                     </form>
                     
@@ -61,7 +61,8 @@
             </div>
         </div>
     </div>
-
+    
+    <?php include "./inc/footer.php" ?>
     <script src="./assets/js/bootstrap.bundle.js"></script>
     <script src="./assets/js/bootstrap.bundle.js.map"></script>
     <script src="./assets/js/custom.js"></script>

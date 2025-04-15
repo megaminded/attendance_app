@@ -95,7 +95,7 @@
                             <button class="btn primary-bg-color text-white w-25" > Submit</button>
                         </div>
                         <div class="row">
-                            <p class="col-12">Already have an accout? <a href="./login.html">Login here</a></p>
+                            <p class="col-12">Already have an accout? <a href="./login.php">Login here</a></p>
                         </div>
                     </form>
                     
@@ -106,6 +106,7 @@
             </div>
         </div>
     </div>
+    <?php include "./inc/footer.php" ?>
 
     <script src="./assets/js/custom.js"></script>
     <script src="./assets/js/bootstrap.bundle.js"></script>
