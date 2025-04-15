@@ -40,7 +40,7 @@
 .spinner {
   font-size: 40px;
   color: purple;
-  animation: rotate 2s linear infinite;
+  animation: rotate 1s linear infinite;
 }
 
 @keyframes rotate {
