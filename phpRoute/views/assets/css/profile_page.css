@@ -1,0 +1,103 @@
+@import url("base.css");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  background-color: var(--color-primary);
+}
+/* nav */
+.first_row {
+  margin-top: 90px;
+}
+/* sidebar */
+.sidebar-drop {
+  border: 2px solid #ddd !important;
+}
+
+.sidebar-drop-ul {
+  width: fit-content;
+  border: 2px solid #ddd !important;
+}
+
+/* SIDEBAR INNA BUTTON */
+.Bars {
+  font-size: 20px;
+  background-color: var(--color-primary);
+}
+
+.Bars:hover {
+  border: 2px solid #ddd !important;
+}
+/* SIDEBAR INNA BUTTON */
+
+/* sidebar */
+
+/* main */
+
+/* profilepageholder */
+.main {
+  background-color: var(--color-primary);
+}
+/* profilepageholder */
+.scroll-main {
+  overflow-y: scroll;
+  overflow: hidden;
+  background-color: white;
+}
+.edit-pro {
+  width: 126px;
+
+  background-color: var(--color-primary);
+  border: 1px solid #ddd !important;
+  color: #ddd;
+  font-weight: 700;
+}
+.edit-pro:hover {
+  color: #ddd;
+}
+/* eiditprofilfront */
+/* attendance */
+.main_card2 {
+  color: var(--color-primary);
+}
+.ontime {
+  background-color: #d6f8e3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 2px;
+}
+.absent {
+  background-color: #f51a21;
+  opacity: 0.6;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 2px;
+}
+/* attendance */
+
+.main-footer {
+  margin-top: 450px;
+  color: darkblue !important;
+}
+/* footer text */
+.whatsap {
+  font-size: 25px;
+  background-color: #ddd;
+  opacity: 0.6;
+  color: green;
+  border-radius: 50%;
+}
+/* footer text */
+
+
+/* Responsivebehaviour */
+    @media only screen and (max-width: 900px) {
+            .scroll-main  {
+    
+             width: 100%;
+  }
+}
+
+/* responsive design */
+
+/* MAIN */
