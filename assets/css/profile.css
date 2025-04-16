@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* nav */
+  /* nav {
+    background-color: var(--color-primary);
+  } */
+body {
+    background-color: #d93896;
+    padding: 2rem;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.student-profile {
+    transition: transform 0.2s;
+    height: 100%;
+    gap: 2px;
+}
+
+.student-profile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.
+
+.student-profile .profile-link {
+    text-decoration: none;
+    color: primary-light;
+}
+
+
+
