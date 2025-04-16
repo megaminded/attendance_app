@@ -11,30 +11,27 @@ body {
     background-color: #d93896;
     padding: 2rem;
 }
-
-.student-card {
-    transition: transform 0.2s;
-    height: 100%;
+a {
+    text-decoration: none;
+    color: white;
 }
 
-.student-card:hover {
+.student-profile {
+    transition: transform 0.2s;
+    height: 100%;
+    gap: 2px;
+}
+
+.student-profile:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+.
 
-.card-img-top {
-    height: 100px;
-    object-fit: cover;
-}
-
-.profile-link {
+.student-profile .profile-link {
     text-decoration: none;
-    color: inherit;
+    color: primary-light;
 }
-.photo{
-    height: 30px;
-    width: 30px;
-    background-size: contain;
-}
+
 
 

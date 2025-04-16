@@ -1,7 +1,7 @@
 <?php
-require(__DIR__."/../PHPMailer/src/PHPMailer.php");
-require(__DIR__."/../PHPMailer/src/SMTP.php");
-require(__DIR__."/../PHPMailer/src/Exception.php");
+require(__DIR__."/../vendors/PHPMailer-master/src/PHPMailer.php");
+require(__DIR__."/../vendors/PHPMailer-master/src/SMTP.php");
+require(__DIR__."/../vendors/PHPMailer-master/src/Exception.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -66,17 +66,14 @@ class emailController{
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
+
             echo json_encode(["status" => true, "message" =>'OTP sent to your email']);
+
         } catch(Exception $e){
+
             echo json_encode(["status" => true, "message" => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
+
         }
-
-
-
-
-
-    
-
 
     }
 }
