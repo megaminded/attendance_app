@@ -1,0 +1,65 @@
+@import url(base.css);
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* table edit delete and user styling */
+.circleUED {
+  background-color: bisque;
+  width: fit-content;
+  border-radius: 50%;
+  padding: 7px;
+}
+.circleUED:hover {
+  background-color: rgb(228, 9, 248);
+  color: rgba(0, 0, 0, 0.354) !important;
+}
+.nameHover:hover {
+  background-color: rgba(165, 42, 42, 0.288);
+  padding: 4px;
+  border-radius: 5px;
+}
+.mediapen {
+  background-color: rgba(165, 42, 42, 0.288);
+  padding: 5px;
+  border-radius: 50%;
+}
+/* table edit delete and user styling */
+
+/* navchild */
+.logoutimg {
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid rgb(228, 9, 248);
+}
+/* navchild */
+.main-bg {
+  background-color: var(--color-primary);
+}
+
+
+/* footer */
+.nav-footer {
+  margin-top: 350px;
+}
+/* footer */
+
+/* scroll  main*/
+.scroll-main {
+  overflow-y: scroll;
+  overflow: hidden;
+}
+
+.tableColo{
+    background-color: purple !important;
+}
+/* adminNavbar */
+.navbar {
+ background-color: var(--color-primary);
+}
+/* studentdetails color from admin records */
+
+.studetails{
+  color: var(--color-primary) !important;
+  
+}
