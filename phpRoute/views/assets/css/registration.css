@@ -1,0 +1,45 @@
+.auth-section{
+   margin: 100px auto;
+}
+.left-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 2px solid var(--color-primary-light);
+    border-radius: 5px;
+
+}
+.left-side h1{
+    font-weight: lighter;
+    color: var(--color-primary);
+    align-self: center;
+    justify-self: center;
+}
+.reg-form{
+    height: fit-content;
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.reg-form form input{
+    background-color: aliceblue;
+    border: 1px solid skyblue;
+    min-height: 30px;
+    min-width: 250px;
+}
+
+.right-side{
+    position: relative;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("../images/auth-img.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.warning-message{
+    font-size: 10px;
+}

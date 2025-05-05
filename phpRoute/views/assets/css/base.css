@@ -1,0 +1,55 @@
+:root {
+  --color-primary: purple;
+  --color-primary-light: rgb(194, 5, 194);
+  --color-secondary: darkblue;
+  --color-tertiary: white;
+}
+
+.primary-color {
+  color: var(--color-primary);
+}
+.primary-bg-color {
+  background-color: var(--color-primary);
+}
+.primary-color-light {
+  color: var(--color-tertiary);
+}
+/* loader */
+.loader {
+  position: absolute;
+  position: fixed;
+  z-index: 9999981;
+  height: 100vh;
+  width: 100%;
+  top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  animation: dissapear 2s;
+}
+
+@keyframes dissapear {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: visible;
+  }
+}
+.spinner {
+  font-size: 40px;
+  color: purple;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* loader */
